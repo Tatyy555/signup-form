@@ -7,14 +7,15 @@ const { MongoClient } = require("mongodb");
 const uri = `mongodb+srv://new-user-1:${process.env.MONGODB_PASS}@cluster0.n3r149s.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 const app = express();
+const PORT = process.env.PORT || 3030;
 
 // Create the server and set the default routes as shown below :
 app.get("/", (req, res) => {
   res.set({ "Access-Control-Allow-Origin": "*" });
   return res.redirect("/index.html");
 });
-app.listen(3000, () => {
-  console.log("Sever is listening at 3000.");
+app.listen(PORT, () => {
+  console.log(`Sever is listening at ${PORT}.`);
 });
 app.use("/", express.static(__dirname + "/"));
 app.use(bodyParser.json());
