@@ -1,12 +1,11 @@
 require("dotenv").config();
 const express = require("express");
-const path = require("path");
 const bodyParser = require("body-parser");
 const crypto = require("crypto");
 const { MongoClient } = require("mongodb");
 const client = new MongoClient(process.env.MONGO_URI);
 const app = express();
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3000;
 
 // Create the server and set the default routes as shown below :
 app.get("/", (req, res) => {
