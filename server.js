@@ -4,8 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const crypto = require("crypto");
 const { MongoClient } = require("mongodb");
-const uri = `mongodb+srv://new-user-1:${process.env.MONGODB_PASS}@cluster0.n3r149s.mongodb.net/?retryWrites=true&w=majority`;
-const client = new MongoClient(uri);
+const client = new MongoClient(process.env.MONGO_URI);
 const app = express();
 const PORT = process.env.PORT || 3030;
 
